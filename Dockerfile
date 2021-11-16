@@ -8,7 +8,7 @@ RUN mvn package -DskipTests
 
 FROM adoptopenjdk/openjdk11:alpine-slim
 
-COPY --from=builder /app/target/spring-boot-web-0.0.2-SNAPSHOT.jar /app.jar
+COPY --from=builder /app/target/api-demo-0.0.1-SNAPSHOT.jar /app.jar
 
 
 CMD ["java", "-Xmx1024m", "-Djava.security.egd=file:/dev/./urandom",  "-jar", "/app.jar"]
